@@ -1,5 +1,11 @@
+import { useEffect } from 'react';
 function App() {
-  window.paypal.Buttons().render('#paypal-button-container')
+  useEffect(() => {
+    if (window.paypal) {
+      window.paypal.Buttons().render('#paypal-button-container');
+    }
+  }, []);
+
   return (
     // Set up a container element for the button
     <div id="paypal-button-container"></div>
